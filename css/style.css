@@ -40,6 +40,16 @@
     cursor: pointer;
     user-select: none;
 }
+.anime-checker__button-animy{
+    display: block;
+    line-height: 35px;
+    cursor: pointer;
+    margin-top: 2px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    user-select: none;
+}
 
 .anime-checker__button-anilibria{
 	font-size: 13pt;
@@ -64,6 +74,14 @@
 .anime-checker__button-anilibria-unsubscribe{
 	background: #2d9c64;
 	color: white;
+}
+.anime-checker__button-animy-subscribe{
+    background: #ffa200;
+    color: white;
+}
+.anime-checker__button-animy-unsubscribe{
+    background: #f04646;
+    color: white;
 }
 .anime-checker__button-anidub-subscribe{
 	background: #ffa200;

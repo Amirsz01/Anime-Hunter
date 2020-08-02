@@ -3,7 +3,7 @@
   "name": "Anime Hunter",
   "short_name": "Anime Hunter",
   "description": "Уведомляет вас о свежих сериях аниме вышедших на популярных фандаб сайтах",
-  "version": "0.1.4.12",
+  "version": "0.1.5.0",
   "background": {
     "scripts": [
       "js/jquery-3.3.1.min.js",
@@ -14,7 +14,16 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*/*"
+		"*://*.agorov.org/*",
+		"*://animevost.org/*",
+		"*://anistar.org/*",
+		"*://*.online-stars.org/*",
+		"*://www.anilibria.tv/*",
+		"*://online.anidub.com/*",
+		"*://animy.org/*",
+		"*://vk.com/*",
+		"*://www.googleapis.com/*",
+		"*://mycoub.ru/*"
       ],
       "css": [
         "css/style.css"

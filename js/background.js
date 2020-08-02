@@ -1,7 +1,7 @@
-var duration = 10000;
-var allsites = ['anistar','animevost','anilibria','anidub', 'urls'];
-var freezeTime = {'anistar': 0, 'animevost': 0, 'anilibria': 0, 'anidub': 0};
-var correctUrls = {};
+const duration = 10000;
+let allsites = ['anistar','animevost','anilibria','anidub','animy', 'urls'];
+let freezeTime = {'anistar': 0, 'animevost': 0, 'anilibria': 0, 'anidub': 0, 'animy': 0};
+let correctUrls = {};
 Object.size = function(obj) {
     var size = 0, key;
     for (key in obj) {
@@ -63,78 +63,86 @@ var parse = function(key, site) {
 					if (xhr.status == 200) { 
 						var page = xhr.responseText;
 						switch(site){
-						case 'anistar': 
-							$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
-							$lastEpisode = $page.find('.torrent .info_d1:first')
-							$lastEpisode.text().match(/[0-9]+/i) != null ? lastEpisodeNum = parseInt($lastEpisode.text().match(/[0-9]+/i)[0]) : lastEpisodeNum = -1;
-							$newTitle = $page.find('.tags').text()
-							$newTitle.match(/онгоинги/) || $newTitle.match(/Скоро/) != null || base[site][key]['time'] != null ? $newTitle = true : $newTitle = false;
-							time = null
-							if(page.match(/var left = parseInt\([0-9]+/g))
-							{
-								time = parseInt(page.match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0])
-							}
-							else
-							{
+							case 'anistar':
+								$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
+								$lastEpisode = $page.find('.torrent .info_d1:first')
+								$lastEpisode.text().match(/[0-9]+/i) != null ? lastEpisodeNum = parseInt($lastEpisode.text().match(/[0-9]+/i)[0]) : lastEpisodeNum = -1;
+								$newTitle = $page.find('.tags').text()
+								$newTitle.match(/онгоинги/) || $newTitle.match(/Скоро/) != null || base[site][key]['time'] != null ? $newTitle = true : $newTitle = false;
 								time = null
-							}
-							break
-						case 'animevost': 
-							$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
-							lastEpisode = page.match(/var data =.*/)[0]
-							if(lastEpisode.match(/-/g)){
-								$lastEpisode = lastEpisode.match(/-/g).length - 1 + lastEpisode.match(/серия/g).length
-							} else {
-								if(lastEpisode.match(/серия/g))
+								if(page.match(/var left = parseInt\([0-9]+/g))
 								{
-									$lastEpisode = lastEpisode.match(/серия/g).length;
-								} else {
-									$lastEpisode = 'pusto';
+									time = parseInt(page.match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0]);
 								}
-							}
-							$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
-							page.match(/id="nexttime"/) || $page.find('.shortstoryFuter').text().match('Онгоинги') || page.match(/miniInfo/) != null ? $newTitle = true : $newTitle = false;
-							if(page.match(/id="nexttime"/))
-							{
-								time = parseInt(page.match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0])
-							}
-							else
-							{
+								else
+								{
+									time = null;
+								}
+								break;
+							case 'animevost':
+								$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
+								lastEpisode = page.match(/var data =.*/)[0]
+								if(lastEpisode.match(/-/g)){
+									$lastEpisode = lastEpisode.match(/-/g).length - 1 + lastEpisode.match(/серия/g).length
+								} else {
+									if(lastEpisode.match(/серия/g))
+									{
+										$lastEpisode = lastEpisode.match(/серия/g).length;
+									} else {
+										$lastEpisode = 'pusto';
+									}
+								}
+								$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
+								page.match(/id="nexttime"/) || $page.find('.shortstoryFuter').text().match('Онгоинги') || page.match(/miniInfo/) != null ? $newTitle = true : $newTitle = false;
+								if(page.match(/id="nexttime"/))
+								{
+									time = parseInt(page.match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0])
+								}
+								else
+								{
+									time = null;
+								}
+								break;
+							case 'anilibria':
+								$page = $(page.replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''))
+								$lastEpisode = $page.find('.torrentcol1:last').text().split('[')[0].split('-')
+								if($lastEpisode[$lastEpisode.length-1])
+								{
+									$lastEpisode = $lastEpisode[$lastEpisode.length-1].match(/[0-9]+/g)[0]
+								} else {
+									$lastEpisode = null
+								}
+								$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
+								page.match(/В работе/) || page.match(/Не начат/) != null ? $newTitle = true : $newTitle = false;
+								time = null;
+								break;
+							case 'anidub':
+								$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, '').replace(/<iframe.*?<\/iframe>/g,''));
+								$range = $page.find('.titlfull').text().match(/[0-9]+\sиз\s[0-9]+/g)
+								if($range)
+									$newTitle = $range.filter(function(e, i){
+										return e.split(' из ')[0] != e.split(' из ')[1]
+									}).length
+								if($page.find('#sel2')[0] !== undefined)
+									$lastEpisode = $page.find('#sel2')[0].length
+								else
+									$lastEpisode = null
+								$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
+								if ($page.find('.titlfull').text().indexOf('xxx') !== -1 || $page.find('.titlfull').text().indexOf('ххх') !== -1)
+									$newTitle = true
 								time = null
-							}
-							break
-						case 'anilibria': 
-							$page = $(page.replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''))
-							$lastEpisode = $page.find('.torrentcol1:last').text().split('[')[0].split('-')
-							if($lastEpisode[$lastEpisode.length-1])
-							{
-								$lastEpisode = $lastEpisode[$lastEpisode.length-1].match(/[0-9]+/g)[0]
-							} else {
-								$lastEpisode = null
-							}
-							$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
-							page.match(/В работе/) || page.match(/Не начат/) != null ? $newTitle = true : $newTitle = false;
-							time = null
-							break
-						case 'anidub':
-							$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, '').replace(/<iframe.*?<\/iframe>/g,''));
-							$range = $page.find('.titlfull').text().match(/[0-9]+\sиз\s[0-9]+/g)
-							if($range)
-								$newTitle = $range.filter(function(e, i){
-	    							return e.split(' из ')[0] != e.split(' из ')[1]
-								}).length
-							if($page.find('#sel2')[0] !== undefined)
-								$lastEpisode = $page.find('#sel2')[0].length
-							else
-								$lastEpisode = null
-							$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
-							if ($page.find('.titlfull').text().indexOf('xxx') !== -1 || $page.find('.titlfull').text().indexOf('ххх') !== -1)
-								$newTitle = true
-							time = null
-							//$('#sel')[0].length
-							break
+								//$('#sel')[0].length
+								break;
+							case 'animy':
+								$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, '').replace(/<iframe.*?<\/iframe>/g,''));
+								$lastEpisode = $page.find('#one-panel>ul>li').length;
+								$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
+								time = null
+								$newTitle = true;
+								break;
 						}
-						var body = ''
+
+						var body = '';
 						if ($newTitle){
 							if(base[site][key]['epizodes'] == 'pusto'){
 								setStorage(key, lastEpisodeNum, site, time);
@@ -176,14 +184,16 @@ var addNewSite = function(site){
 	});
 }
 var getSite = function(url){
-	if(url.indexOf(correctUrls['anistar'].match(/[^.]*.[^.]*$/)[0]) !== -1){
-		return 'anistar'
-	} else if(url.indexOf(correctUrls['animevost'].match(/[^.]*.[^.]*$/)[0]) !== -1){
-		return 'animevost'
-	} else if(url.indexOf(correctUrls['anilibria']) !== -1){
+	if(url.indexOf(correctUrls['anilibria']) !== -1){
 		return 'anilibria'
 	} else if(url.indexOf(correctUrls['anidub']) !== -1){
 		return 'anidub'
+	} else if(url.indexOf(correctUrls['animy']) !== -1){
+		return 'animy'
+	} else if(url.indexOf(correctUrls['anistar'].match(/[^.]*.[^.]*$/)[0]) !== -1){
+		return 'anistar'
+	} else if(url.indexOf(correctUrls['animevost'].match(/[^.]*.[^.]*$/)[0]) !== -1){
+		return 'animevost'
 	} else {
 		return 'error'
 	}
@@ -262,7 +272,6 @@ var removeStorage = function(url, type, site){
 					break;
 				}
 			}
-
 		}
 		else
 		{
@@ -363,7 +372,8 @@ var correctUrlsFunc = function(){
 	getStorage('urls', function(base){
 		base['urls']['anidub'] = 'anidub';
 		base['urls']['anilibria'] = 'anilibria';
-		var xhr_anistar = new XMLHttpRequest();	
+		base['urls']['animy'] = 'animy';
+		var xhr_anistar = new XMLHttpRequest();
 		xhr_anistar.open('GET', 'https://www.googleapis.com/youtube/v3/channels?id=UC0l-g_Ti9rA-SY4l113PCZA&part=snippet&key=AIzaSyA-dlBUjVQeuc4a6ZN4RkNUYDFddrVLxrA'); 
 		xhr_anistar.send();
 		xhr_anistar.onreadystatechange = function() {
@@ -398,15 +408,14 @@ function correctDomain(site,url){
 		switch(site)
 		{
 			case 'anistar': 
-				var xhr = new XMLHttpRequest();	
-				xhr.open('GET', 'https://vk.com/club40452590'); 
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', 'https://www.googleapis.com/youtube/v3/channels?id=UC0l-g_Ti9rA-SY4l113PCZA&part=snippet&key=AIzaSyA-dlBUjVQeuc4a6ZN4RkNUYDFddrVLxrA');
 				xhr.send();
 				xhr.onreadystatechange = function() {
 					if (xhr.readyState == 4) { 
-						if (xhr.status == 200) { 
-							var page = xhr.responseText;
-							$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
-							var hostname = new URL($page.find('.group_info_row.site a').text()).hostname;
+						if (xhr.status == 200) {
+							let domainList = JSON.parse(JSON.parse(this.responseText).items[0].snippet.description);
+							let hostname = new URL('http://' + domainList[Object.keys(domainList)[Object.keys(domainList).length-1]]).hostname;
 							if(hostname == new URL(url).hostname) {
 								freezeTime[site] = new Date().getTime() + 600000;
 								return;
