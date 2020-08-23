@@ -172,7 +172,7 @@ function setBadge(num = 0){
 var emptyFunc = function(b = -1){
   if(b != -1)
   {
-    if ($.isEmptyObject(b.anilibria) && $.isEmptyObject(b.anistar) && $.isEmptyObject(b.animevost) && $.isEmptyObject(b.anidub))
+    if ($.isEmptyObject(b.anilibria) && $.isEmptyObject(b.anistar) && $.isEmptyObject(b.animevost) && $.isEmptyObject(b.anidub) && $.isEmptyObject(b.animy))
     {
         templates.item = `
             <div class="empty">
@@ -305,7 +305,7 @@ var $subContent = $('.main-content[data-tab-name="subs"]');
 chrome.storage.local.get(null, function(result) {
     let i = 0;
     b = result;
-    if (!$.isEmptyObject(b.anilibria) || !$.isEmptyObject(b.anistar) || !$.isEmptyObject(b.animevost) || !$.isEmptyObject(b.anidub)) {
+    if (!$.isEmptyObject(b.anilibria) || !$.isEmptyObject(b.anistar) || !$.isEmptyObject(b.animevost) || !$.isEmptyObject(b.anidub) || !$.isEmptyObject(b.animy)) {
       empty = true;
       var animeList = b;
       for (var site in animeList) {
