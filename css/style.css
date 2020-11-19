@@ -29,9 +29,9 @@
 .anime-checker__button-anidub{
 	display: block;
     float: left;
-    width: 240px;
-    margin-right: 58%;
-    margin-left: 3px;
+    width: 250px;
+    margin: 0;
+    margin-bottom: 10px;
     text-align: center;
     padding: 5px;
     font-size: 15px;

@@ -39,8 +39,8 @@ chrome.storage.local.get('urls', function(data){
 			interface.unsubscribe = `<div class="anime-checker__button-anidub anime-checker__button-unsubscribe anime-checker__button-anidub-unsubscribe">Отписаться</div>`;
 			break
 		case 'animy':
-			interface.subscribe = `<div class="anime-checker__button-animy anime-checker__button-subscribe anime-checker__button-anidub-subscribe">Подписаться</div>`;
-			interface.unsubscribe = `<div class="anime-checker__button-animy anime-checker__button-unsubscribe anime-checker__button-anidub-unsubscribe">Отписаться</div>`;
+			interface.subscribe = `<div class="anime-checker__button-animy anime-checker__button-subscribe anime-checker__button-animy-subscribe">Подписаться</div>`;
+			interface.unsubscribe = `<div class="anime-checker__button-animy anime-checker__button-unsubscribe anime-checker__button-animy-unsubscribe">Отписаться</div>`;
 		break
 	}
 	window.addEventListener('DOMContentLoaded', function(event) {
@@ -61,7 +61,7 @@ chrome.storage.local.get('urls', function(data){
 			}
 			break
 		case 'anidub':
-			if($('.player').length){
+			if($('.series-tab').length){
 				init();		
 			}
 			break
@@ -106,8 +106,8 @@ $(document).on( 'click', '.anime-checker__button-subscribe', function(){
 			var titleTime = null
 			break;
 		case 'anidub':
-			var titleName = $('.titlfull').text().replace(/ \[[0-9 а-я]+\]/, "")
-			var titleImage = $('.poster_img').children()[0].src
+			var titleName = $('.fright>h1').text().replace(/ \[[0-9 а-я]+\]/, "")
+			var titleImage = $('.fposter').children()[0].src
 			var titleTime = null
 			break;
 		case 'animy':
@@ -187,18 +187,18 @@ function init() {
 				}
 				break;
 			case 'anidub':
-				$range = $('.titlfull').text().match(/[0-9]+\sиз\s[0-9]+/g)
+				$range = $('.fright>h1').text().match(/[0-9]+\sиз\s[0-9]+/g)
 					if($range)
 						$newTitle = $range.filter(function(e, i){
 							return e.split(' из ')[0] != e.split(' из ')[1]
 						}).length
-				if($newTitle || $('.titlfull').text().indexOf('xxx') !== -1 || $('.titlfull').text().indexOf('ххх') !== -1){
+				if($newTitle || $('.fright>h1').text().indexOf('xxx') !== -1 || $('.fright>h1').text().indexOf('ххх') !== -1){
 					baseUrl = base.anidub[document.URL];
 					$('.anime-checker__button-anidub').remove();
 					if (baseUrl == null || baseUrl == undefined){
-						$('.poster_img').after(interface.subscribe)
+						$('.fposter').after(interface.subscribe)
 					} else {
-						$('.poster_img').after(interface.unsubscribe)
+						$('.fposter').after(interface.unsubscribe)
 					}
 				}
 				break;

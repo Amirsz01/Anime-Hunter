@@ -118,17 +118,17 @@ var parse = function(key, site) {
 								break;
 							case 'anidub':
 								$page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, '').replace(/<iframe.*?<\/iframe>/g,''));
-								$range = $page.find('.titlfull').text().match(/[0-9]+\sиз\s[0-9]+/g)
+								$range = $page.find('.fright>h1').text().match(/[0-9]+\sиз\s[0-9]+/g)
 								if($range)
 									$newTitle = $range.filter(function(e, i){
 										return e.split(' из ')[0] != e.split(' из ')[1]
 									}).length
-								if($page.find('#sel2')[0] !== undefined)
-									$lastEpisode = $page.find('#sel2')[0].length
+								if($page.find('.series-tab.active>span')[0] !== undefined)
+									$lastEpisode = $page.find('.series-tab.active>span')[0].length
 								else
 									$lastEpisode = null
 								$lastEpisode != null? lastEpisodeNum = parseInt($lastEpisode) : lastEpisodeNum = -1;
-								if ($page.find('.titlfull').text().indexOf('xxx') !== -1 || $page.find('.titlfull').text().indexOf('ххх') !== -1)
+								if ($page.find('.fright>h1').text().indexOf('xxx') !== -1 || $page.find('.fright>h1').text().indexOf('ххх') !== -1)
 									$newTitle = true
 								time = null
 								//$('#sel')[0].length
