@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="92eadbc5-98f0-4041-9f06-c17435bfb08f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NotifList/NotifItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NotifList/NotifList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubsList/SubsItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubsList/SubsList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubsList/SubsSiteList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fontello.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/animation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-codes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-embedded.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-ie7-codes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-ie7.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/inject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/jquery-3.5.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style-popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/simplebar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-popup.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-popup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/animation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-codes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-embedded.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-ie7-codes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-ie7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/inject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-3.5.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/planeta-gorod-ogni-art-fantastika.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/simplebar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1osVDBPiDUyOnlsQcZkoq4vANvD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92eadbc5-98f0-4041-9f06-c17435bfb08f" name="Default Changelist" comment="" />
+      <changelist id="" name="New changelist" comment="" />
+      <created>1614075162296</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614075162296</updated>
+      <workItem from="1614075163354" duration="1358000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Start work commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start work commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614076148817">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614076148817" />
+    <state x="744" y="222" key="RollbackChangesDialog" timestamp="1614076064515">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="744" y="222" key="RollbackChangesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614076064515" />
+    <state x="790" y="389" key="VCS.EditChangelistDialog" timestamp="1614076104964">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="790" y="389" key="VCS.EditChangelistDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614076104964" />
+  </component>
+</project>

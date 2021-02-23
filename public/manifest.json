@@ -1,0 +1,58 @@
+{
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "js/jquery-3.5.1.min.js",
+      "js/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "logo2.png",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "css/style.css"
+      ],
+      "js": [
+        "js/jquery-3.5.1.min.js",
+        "js/inject.js"
+      ],
+      "matches": [
+        "*://*.agorov.org/*",
+        "*://animevost.org/*",
+        "*://anistar.org/*",
+        "*://*.online-stars.org/*",
+        "*://www.anilibria.tv/*",
+        "*://online.anidub.com/*",
+        "*://animy.org/*",
+        "*://vk.com/*",
+        "*://www.googleapis.com/*",
+        "*://mycoub.ru/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "description": "Уведомляет вас о свежих сериях аниме вышедших на популярных фандаб сайтах",
+  "developer": {
+    "name": "amirsz"
+  },
+  "icons": {
+    "128": "logo2.png",
+    "16": "logo2.png",
+    "48": "logo2.png"
+  },
+  "manifest_version": 2,
+  "name": "Anime Hunter",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "notifications",
+    "tabs"
+  ],
+  "short_name": "Anime Hunter",
+  "update_url": "https://extension-updates.opera.com/api/omaha/update/",
+  "version": "0.1.5.4",
+  "content_security_policy": "script-src 'self' 'sha256-goLGb3pb4HkI2HW8bGfkh3do8o3PlSC5urj3EZr6wU4=' object-src 'self' style-src 'self' 'sha256-dxvrHca36DS3tFPJV29y7JaXLeSrvSp8d4KQJpIf7yg='"
+}
