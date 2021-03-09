@@ -20,77 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92eadbc5-98f0-4041-9f06-c17435bfb08f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NotifList/NotifItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NotifList/NotifList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SubsList/SubsItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SubsList/SubsList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SubsList/SubsSiteList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fontello.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/animation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-codes.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-embedded.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-ie7-codes.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello-ie7.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/css/fontello.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fontello/font/fontello.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/background.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/inject.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/jquery-3.5.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style-popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/simplebar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style-popup.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style-popup.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/animation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-codes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-embedded.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-ie7-codes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello-ie7.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/css/fontello.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontello/font/fontello.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/background.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/inject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery-3.5.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/planeta-gorod-ogni-art-fantastika.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/simplebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubsList/SubsItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubsList/SubsItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubsList/SubsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubsList/SubsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubsList/SubsSiteList.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +52,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="G:/OpenServer/domains/cinema" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -123,13 +63,30 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="92eadbc5-98f0-4041-9f06-c17435bfb08f" name="Default Changelist" comment="" />
-      <changelist id="" name="New changelist" comment="" />
       <created>1614075162296</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614075162296</updated>
-      <workItem from="1614075163354" duration="1358000" />
+      <workItem from="1614075163354" duration="2021000" />
+      <workItem from="1614799353404" duration="30000" />
+      <workItem from="1615121338793" duration="9469000" />
+      <workItem from="1615302158713" duration="1633000" />
     </task>
+    <task id="LOCAL-00001" summary="Start work commit">
+      <created>1614076684609</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614076684609</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Start work commit">
+      <created>1614077137714</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614077137714</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,16 +102,26 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start work commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start work commit" />
+    <MESSAGE value="Change sort items" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change sort items" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615303952363">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615303952363" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614076148817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614076148817" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1614799385058">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614799385058" />
     <state x="744" y="222" key="RollbackChangesDialog" timestamp="1614076064515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -163,5 +130,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="389" key="VCS.EditChangelistDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614076104964" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614077144218">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614077144218" />
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614076802469">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614076802469" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1615125564873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615125564873" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615122977468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615122977468" />
   </component>
 </project>

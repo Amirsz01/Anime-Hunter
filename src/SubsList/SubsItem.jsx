@@ -88,7 +88,7 @@ const getStringTime = function(num, type)
             break;
     }
 }
-export default function SubsItem({site,id, item, onRemove}) {
+export default function SubsItem({site,id, item, onRemove = ()=>{}}) {
     return(
         <div className="item" data-site={site} data-id={id} data-time={50}>
             <div className="item-info">

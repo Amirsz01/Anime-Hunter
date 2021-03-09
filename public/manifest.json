@@ -54,5 +54,5 @@
   "short_name": "Anime Hunter",
   "update_url": "https://extension-updates.opera.com/api/omaha/update/",
   "version": "0.1.5.4",
-  "content_security_policy": "script-src 'self' 'sha256-goLGb3pb4HkI2HW8bGfkh3do8o3PlSC5urj3EZr6wU4=' object-src 'self' style-src 'self' 'sha256-dxvrHca36DS3tFPJV29y7JaXLeSrvSp8d4KQJpIf7yg='"
+  "content_security_policy": "default-src 'self'; connect-src * data: blob: filesystem:; style-src 'self' fonts.gstatic.com data: 'unsafe-inline'; img-src * data:; frame-src 'self' data:; font-src 'self' fonts.gstatic.com data:; media-src * data: blob: filesystem:;"
 }
