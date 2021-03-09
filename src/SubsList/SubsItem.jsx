@@ -88,9 +88,9 @@ const getStringTime = function(num, type)
             break;
     }
 }
-export default function SubsItem({site,id, item, onRemove = ()=>{}}) {
+export default function SubsItem({url,id, item, onRemove, site}) {
     return(
-        <div className="item" data-site={site} data-id={id} data-time={50}>
+        <div className="item" data-site={url} data-id={id} data-time={50}>
             <div className="item-info">
                 <div className="item-info__poster" style={{backgroundImage: `url(${item.image})`}} />
                 <div className="item-info-text">
@@ -103,10 +103,10 @@ export default function SubsItem({site,id, item, onRemove = ()=>{}}) {
                 </div>
             </div>
             <div className="item-control">
-                <a className="item-control__link" href={site} target="_blank" rel="noreferrer">
+                <a className="item-control__link" href={url} target="_blank" rel="noreferrer">
                     <span className="text">Перейти к просмотру<i className="icon-angel-rigrt"/></span>
                 </a>
-                <div className="item-control__close" onClick={()=>{onRemove(site)}}>
+                <div className="item-control__close" onClick={()=>{onRemove(site, url)}}>
                     <span className="text"><i className="icon-times"/></span>
                 </div>
             </div>

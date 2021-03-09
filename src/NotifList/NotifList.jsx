@@ -51,7 +51,6 @@ class NotifList extends React.Component
                     Object.size(this.state.notificationList) ? (
                         <div className="main-content" data-role="tab" data-tab-name="notification">
                             {
-
                                 Object.keys(this.state.notificationList).reverse().map((item,i)=>{
                                     return (
                                         <NotifItem key={i} item={this.state.notificationList[item]} id={item} onRemove={this.handleRemove.bind(this)}/>
@@ -61,9 +60,9 @@ class NotifList extends React.Component
                         </div>
                     ) : (
                         <div className="empty">
-                        <span className="empty-text empty-text__notification">
-                            Новых уведомлений нет!
-                        </span>
+                            <span className="empty-text empty-text__notification">
+                                Новых уведомлений нет!
+                            </span>
                         </div>
                     )
                 }
@@ -71,41 +70,5 @@ class NotifList extends React.Component
         )
     }
 }
-// function NotifList() {
-//     const notificationList = JSON.parse(localStorage.getItem('notificationList'));
-//     const [obj, setObj] = useState(notificationList);
-//
-//     function handleRemove(idItem) {
-//         setObj(
-//             Object.keys(obj).reduce((res,item )=>{
-//                 return idItem !== item
-//             }, {}) //Посмотреть
-//         );
-//     }
-//
-//     return (
-//         <>
-//             {
-//                 Object.size(obj) ? (
-//                     <div className="main-content" data-role="tab" data-tab-name="notification">
-//                         {
-//                             Object.keys(obj).map((item,i)=>{
-//                                 return (
-//                                     <NotifItem key={i} item={obj[item]} id={item} onRemove={handleRemove}/>
-//                                 )
-//                             })
-//                         }
-//                     </div>
-//                 ) : (
-//                     <div className="empty">
-//                         <span className="empty-text empty-text__notification">
-//                             Новых уведомлений нет!
-//                         </span>
-//                     </div>
-//                 )
-//             }
-//         </>
-//     )
-// }
 
 export default NotifList

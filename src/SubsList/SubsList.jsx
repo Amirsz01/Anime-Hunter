@@ -2,32 +2,53 @@
 import React from 'react'
 import SubsItem from "./SubsItem";
 
+
 // Using chrome functions
 const getData = function(_this){
         chrome.storage.local.get(null, function (base) {
             _this.restructData(base);
         })
 }
-const saveDataToStorage = function (site = null, data) {
-    let editedObj = {};
-    editedObj[site] = data;
+const saveDataToStorage = function (_this, site = null, idItem) {
+    let editedObj = _this.state.data_obj;
+    if(editedObj[site][idItem] !== null && editedObj[site][idItem] !== undefined)
+        delete editedObj[site][idItem]
+    else
+        console.log("Deleted item is undefined")
     chrome.storage.local.set(editedObj);
 }
 
+Object.filterForKey = function( obj, predicate) {
+    let result = {}, key;
+
+    for (key in obj) {
+        if (obj.hasOwnProperty(key) && !predicate(key)) {
+            result[key] = obj[key];
+        }
+    }
+
+    return result;
+};
 
 class SubsList extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {data: {}}
+        this.state = {
+            data: [],
+            data_obj: {}
+        }
         getData(this);
     }
 
-    setData(site, obj){
-        this.setState(prev => {
-                prev['data'][site] = obj;
-             })
-        saveDataToStorage(site, obj);
+    setData(site, idItem, obj){
+        this.setState(prev =>{
+            return  {
+                ...prev,
+                'data': obj
+            }
+        })
+        saveDataToStorage(this, site, idItem)
         this.forceUpdate()
     }
 
@@ -41,56 +62,38 @@ class SubsList extends React.Component{
 
                    sortData.push({
                        ...data[site][item],
-                       urlItem: item
+                       urlItem: item,
+                       site: site
                    });
                    return true;
                 })
             }
             return true;
         })
-        const compare = function (item1, item2)
-        {
-           return  item1['time'] > item2['time'];
-        };
-        sortData.sort(compare);
-        this.setState({'data': sortData});
+
+        sortData.sort((item1, item2) => parseInt(item1['time']) - parseInt(item2['time']));
+        this.setState({
+            'data': sortData,
+            'data_obj': data
+        });
         return sortData;
     }
-    // getDataSize(data = {})
-    // {
-    //     let sizeObj = 0;
-    //     if(!Object.size(data))
-    //         return sizeObj;
-    //     Object.keys(data).map((item)=>{
-    //         if(item!== 'urls')
-    //             sizeObj += Object.size(data[item])
-    //         return item;
-    //     })
-    //     return sizeObj;
-    // }
 
-    // getComponentData(data)
-    // {
-    //     return Object.keys(data).map((site, i) => {
-    //         if (site !== 'urls')
-    //             if (data[site] !== null && data[site] !== undefined && Object.size(data[site])) {
-    //                 return (<SubsSiteList key={'site' + i} setData={this.setData.bind(this)} data={data[site]} site={site} id={i}/>)
-    //             }
-    //         return <></>
-    //     })
-    // }
+    handleRemove(site, idItem) {
+        const newData = this.state.data.filter(item=> item.urlItem !== idItem)
+        this.setData(site, idItem, newData);
+    }
 
     render() {
         const data = this.state.data;
-        console.log(data.length)
+        console.log(data)
         return (
             <div className="main-content" data-role="tab" data-tab-name="sub">
                 {
                     data.length ?
                         (
-                            // this.getComponentData(data)
                             data.map((item, i)=>{
-                                return <SubsItem key={i} id={i} item={item} site={item['urlItem']} onRemove={()=>{}}/>
+                                return <SubsItem key={i} id={i} item={item} site={item['site']} url={item['urlItem']} onRemove={this.handleRemove.bind(this)}/>
                             })
                         )
                         :
