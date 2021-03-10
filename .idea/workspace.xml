@@ -23,8 +23,6 @@
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NotifList/NotifList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/NotifList/NotifList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SubsList/SubsItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubsList/SubsItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SubsList/SubsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubsList/SubsList.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +68,8 @@
       <workItem from="1614799353404" duration="30000" />
       <workItem from="1615121338793" duration="9469000" />
       <workItem from="1615302158713" duration="5860000" />
-      <workItem from="1615322122149" duration="6946000" />
+      <workItem from="1615322122149" duration="7651000" />
+      <workItem from="1615367148520" duration="4358000" />
     </task>
     <task id="LOCAL-00001" summary="Start work commit">
       <created>1614076684609</created>
@@ -93,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615304099794</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fix button clear all notifList">
+      <created>1615332837840</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615332837840</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,7 +120,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start work commit" />
     <MESSAGE value="Change sort items" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change sort items" />
+    <MESSAGE value="Fix button clear all notifList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix button clear all notifList" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615303952363">
@@ -137,10 +144,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="389" key="VCS.EditChangelistDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614076104964" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615304331550">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615332849612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615304331550" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615332849612" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614076802469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

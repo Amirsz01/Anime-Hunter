@@ -36,7 +36,8 @@ class SubsList extends React.Component{
         super(props);
         this.state = {
             data: [],
-            data_obj: {}
+            data_obj: {},
+            sort_type: 'time'
         }
         getData(this);
     }
@@ -50,6 +51,30 @@ class SubsList extends React.Component{
         })
         saveDataToStorage(this, site, idItem)
         this.forceUpdate()
+    }
+    sortData(data = [], type = this.state.sort_type)
+    {
+        let saveState = true;
+        if(!data.length) {
+            data = this.state.data;
+            saveState = false;
+        }
+        if(type === 'name')
+            data = data.sort((item1, item2) => item1['name'].localeCompare(item2['name']))
+        else
+            data = data.sort((item1, item2) => parseInt(item1['time']) - parseInt(item2['time']));
+        if(!saveState)
+        {
+            this.setState(prev=>{
+                return {
+                    ...prev,
+                    'sort_type': type,
+                    'data': data
+                }
+            });
+        }
+        this.forceUpdate()
+        return data;
     }
 
     restructData(data)
@@ -71,11 +96,14 @@ class SubsList extends React.Component{
             return true;
         })
 
-        sortData.sort((item1, item2) => parseInt(item1['time']) - parseInt(item2['time']));
+        sortData = this.sortData(sortData, this.state.sort_type);
+
         this.setState({
+            ...this.state,
             'data': sortData,
             'data_obj': data
         });
+
         return sortData;
     }
 
@@ -86,7 +114,6 @@ class SubsList extends React.Component{
 
     render() {
         const data = this.state.data;
-        console.log(data)
         return (
             <div className="main-content" data-role="tab" data-tab-name="sub">
                 {
