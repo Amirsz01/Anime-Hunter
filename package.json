@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "build": "browserify .\\js\\background.js | uglifyjs > .\\js\\bundle.js"
+    },
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.12"
+    }
+}

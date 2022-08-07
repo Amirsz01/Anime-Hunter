@@ -1,12 +1,16 @@
-var getStorage = function(site, callback){
-	chrome.storage.local.get(site, function(data){
+const getStorage = function (site, callback) {
+    chrome.storage.local.get(site, function (data) {
 		callback(data);
 	})
-}
+};
+
+let site;
+let correctUrls = {};
+
 function siteProject(){
 	if(document.URL.indexOf(correctUrls['anistar']) !== -1 || document.URL.indexOf("anistar.org") !== -1 || document.URL.indexOf("online-star.org") !== -1){
 		return 'anistar';
-	} else if(document.URL.indexOf(correctUrls['animevost']) !== -1 || document.URL.indexOf("animevost.org") !== -1 || document.URL.indexOf("agorov.org") !== -1 ){
+    } else if (document.URL.indexOf(correctUrls['animevost']) !== -1 || document.URL.indexOf("animevost.org") !== -1 || document.URL.indexOf("agorov.org") !== -1 || document.URL.indexOf("vost.pw") !== -1) {
 		return 'animevost';
 	} else if(document.URL.indexOf(correctUrls['anilibria']) !== -1){
 		return 'anilibria';
@@ -16,8 +20,8 @@ function siteProject(){
 		return 'anidub';
 	}
 }
-var site;
-var correctUrls = {};
+
+console.log(13213);
 chrome.storage.local.get('urls', function(data){
 	correctUrls = data['urls'];
 	site = siteProject();
@@ -25,19 +29,19 @@ chrome.storage.local.get('urls', function(data){
 		case 'anistar':
 			interface.subscribe = `<div class="anime-checker__button-anistar anime-checker__button-subscribe anime-checker__button-anistar-subscribe">Подписаться</div>`;
 			interface.unsubscribe = `<div class="anime-checker__button-anistar anime-checker__button-unsubscribe anime-checker__button-anistar-unsubscribe">Отписаться</div>`;
-			break
+            break;
 		case 'animevost':
 			interface.subscribe = `<div class="anime-checker__button-animevost anime-checker__button-subscribe anime-checker__button-animevost-subscribe">Подписаться</div>`;
 			interface.unsubscribe = `<div class="anime-checker__button-animevost anime-checker__button-unsubscribe anime-checker__button-animevost-unsubscribe">Отписаться</div>`;
-			break
+            break;
 		case 'anilibria':
 			interface.subscribe = `<div class="anime-checker__button-anilibria anime-checker__button-subscribe anime-checker__button-anilibria-subscribe">Подписаться</div>`;
 			interface.unsubscribe = `<div class="anime-checker__button-anilibria anime-checker__button-unsubscribe anime-checker__button-anilibria-unsubscribe">Отписаться</div>`;
-			break
+            break;
 		case 'anidub':
 			interface.subscribe = `<div class="anime-checker__button-anidub anime-checker__button-subscribe anime-checker__button-anidub-subscribe">Подписаться</div>`;
 			interface.unsubscribe = `<div class="anime-checker__button-anidub anime-checker__button-unsubscribe anime-checker__button-anidub-unsubscribe">Отписаться</div>`;
-			break
+            break;
 		case 'animy':
 			interface.subscribe = `<div class="anime-checker__button-animy anime-checker__button-subscribe anime-checker__button-animy-subscribe">Подписаться</div>`;
 			interface.unsubscribe = `<div class="anime-checker__button-animy anime-checker__button-unsubscribe anime-checker__button-animy-unsubscribe">Отписаться</div>`;
@@ -49,22 +53,22 @@ chrome.storage.local.get('urls', function(data){
 			if ($('.bg-white-main .video_as').length) {
 				init();
 			}
-			break
+            break;
 		case 'animevost':
 			if($('.shortstoryFuter').length == 1){
-				init();		
+                init();
 			}
-			break
+            break;
 		case 'anilibria':
 			if($('.download-torrent').length){
-				init();		
+                init();
 			}
-			break
+            break;
 		case 'anidub':
 			if($('.series-tab').length){
-				init();		
+                init();
 			}
-			break
+            break;
 		case 'animy':
 			if($('#one-panel>ul>li').length){
 				init();
@@ -80,40 +84,43 @@ let tmpURL = new URL(document.URL);
 let titleUrl = tmpURL.origin + tmpURL.pathname;
 
 $(document).on( 'click', '.anime-checker__button-subscribe', function(){
+    let titleTime;
+    let titleImage;
+    let titleName;
 	let params = '';
 	switch(site){
 		case 'animevost':
-			var titleName = $('.shortstoryHead').text().replace(/\n/g,'').split('[')[0].replace(/ $/, '')
-			var titleImage = self.origin + $('.shortstoryContent .imgRadius').attr('src')
+            titleName = $('.shortstoryHead').text().replace(/\n/g, '').split('[')[0].replace(/ $/, '');
+            titleImage = self.origin + $('.shortstoryContent .imgRadius').attr('src');
 			if($('#dle-content').text().match(/var left = parseInt\([0-9]+/g)){
-				var titleTime = parseInt($('#dle-content').text().match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0])
+                titleTime = parseInt($('#dle-content').text().match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0]);
 			}else {
-				var titleTime = null
+                titleTime = null;
 			}
 			break;
 		case 'anistar':
-			var titleName = $('.news_header h1').text().replace(/ $/, '')
-			var titleImage = self.origin + $('.news_avatar .main-img').attr('src')
+            titleName = $('.news_header h1').text().replace(/ $/, '');
+            titleImage = self.origin + $('.news_avatar .main-img').attr('src');
 			if($('.news_avatar').text().match(/var left = parseInt\([0-9]+/g)){
-				var titleTime = parseInt($('#dle-content').text().match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0])
+                titleTime = parseInt($('#dle-content').text().match(/var left = parseInt\([0-9]+/g)[0].match(/[0-9]+/)[0]);
 			}else {
-				var titleTime = null
+                titleTime = null;
 			}
 			break;
 		case 'anilibria':
-			var titleName = $('.release-title').text()
-			var titleImage = $('.detail_torrent_pic').attr('src')
-			var titleTime = null
+            titleName = $('.release-title').text();
+            titleImage = $('.detail_torrent_pic').attr('src');
+            titleTime = null;
 			break;
 		case 'anidub':
-			var titleName = $('.fright>h1').text().replace(/ \[[0-9 а-я]+\]/, "")
-			var titleImage = $('.fposter').children()[0].src
-			var titleTime = null
+            titleName = $('.fright>h1').text().replace(/ \[[0-9 а-я]+\]/, "");
+            titleImage = $('.fposter').children()[0].src;
+            titleTime = null;
 			break;
 		case 'animy':
-			var titleName = $('.name').text();
-			var titleImage = $('.imgr')[0].src
-			var titleTime = null;
+            titleName = $('.name').text();
+            titleImage = $('.imgr')[0].src;
+            titleTime = null;
 			if($('.season-btn').length) {
 				let tmpUrl = new URL($('.season-btn')[$('.season-btn').length-1].href);
 				titleUrl = tmpUrl.origin + tmpUrl.pathname + tmpUrl.search;
@@ -122,18 +129,18 @@ $(document).on( 'click', '.anime-checker__button-subscribe', function(){
 	}
 	chrome.runtime.sendMessage({output: titleUrl, image: titleImage, name: titleName, remove: 0, time: titleTime});
 	setTimeout(init, 200);
-})
+});
 
 $(document).on( 'click', '.anime-checker__button-unsubscribe', function(){
 	chrome.runtime.sendMessage({output: titleUrl, remove: 1});
 	setTimeout(init, 200);
-})
+});
 
 
 
 function init() {
 	getStorage(site, function(base){
-		var baseUrl
+        var baseUrl;
 		switch(site){
 			case 'anistar':
 				if($('.tags').text().match(/Скоро/) || $('.tags').text().match(/онгоинги/) != null || $('.news_avatar script').text().match(/var left = parseInt\([-0-9]*/)[0].match(/[-0-9]+/g)[0] > 0){
@@ -187,11 +194,11 @@ function init() {
 				}
 				break;
 			case 'anidub':
-				$range = $('.fright>h1').text().match(/[0-9]+\sиз\s[0-9]+/g)
+                $range = $('.fright>h1').text().match(/[0-9]+\sиз\s[0-9]+/g);
 					if($range)
 						$newTitle = $range.filter(function(e, i){
 							return e.split(' из ')[0] != e.split(' из ')[1]
-						}).length
+                        }).length;
 				if($newTitle || $('.fright>h1').text().indexOf('xxx') !== -1 || $('.fright>h1').text().indexOf('ххх') !== -1){
 					baseUrl = base.anidub[document.URL];
 					$('.anime-checker__button-anidub').remove();
