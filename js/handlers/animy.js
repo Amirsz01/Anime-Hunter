@@ -1,4 +1,4 @@
-import * as cheerio from 'https://cdn.jsdelivr.net/npm/cheerio@1.0.0-rc.12/+esm'
+import * as cheerio from './../cheerio.js'
 
 const $ = cheerio.load;
 
