@@ -136,7 +136,7 @@ $(document).on('click', '.anime-checker__button-subscribe', async function () {
 });
 
 $(document).on('click', '.anime-checker__button-unsubscribe', async function () {
-	await chrome.runtime.sendMessage({output: titleUrl, remove: 1});
+	await chrome.runtime.sendMessage({output: titleUrl, remove: 1, site: site});
 	setTimeout(init, 200);
 });
 

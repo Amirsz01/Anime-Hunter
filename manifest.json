@@ -1,6 +1,7 @@
 {
     "background": {
-        "service_worker": "bg-wrapper.js"
+        "service_worker": "bg-wrapper.js",
+        "type": "module"
     },
     "action": {
         "browser_style": true,
@@ -21,18 +22,7 @@
                 "js/inject.js"
             ],
             "matches": [
-                "*://*.agorov.org/*",
-                "*://animevost.org/*",
-                "*://*.vost.pw/*",
-                "*://anistar.org/*",
-                "*://*.online-stars.org/*",
-                "*://*.online-star.org/*",
-                "*://www.anilibria.tv/*",
-                "*://online.anidub.com/*",
-                "*://animy.org/*",
-                "*://vk.com/*",
-                "*://www.googleapis.com/*",
-                "*://mycoub.ru/*"
+                "<all_urls>"
             ],
             "run_at": "document_start"
         }

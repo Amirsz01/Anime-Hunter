@@ -1,31 +1,10 @@
+import {getObjectFromLocalStorage, saveObjectInLocalStorage} from "./utils/utils.js";
+
 (async () => {
     const templates = {};
     const tabs = {};
     let arraySubj = [];
 
-    const getObjectFromLocalStorage = async function (key) {
-        return new Promise((resolve, reject) => {
-            try {
-                chrome.storage.local.get(key, function (value) {
-                    resolve(value[key]);
-                });
-            } catch (ex) {
-                reject(ex);
-            }
-        });
-    };
-
-    const saveObjectInLocalStorage = async function (obj) {
-        return new Promise((resolve, reject) => {
-            try {
-                chrome.storage.local.set(obj, function () {
-                    resolve();
-                });
-            } catch (ex) {
-                reject(ex);
-            }
-        });
-    };
 
     const getSortType = function () {
         let res = localStorage.getItem('sortType');
@@ -283,16 +262,17 @@
         let timeRender = function (left, id) {
             left = left - 1;
             if (left > 0) {
-                minutes = left / 60 | 0,
+                let minutes = left / 60 | 0,
                     hours = minutes / 60 | 0,
-                    days = hours / 24 | 0,
-                    hours = hours % 24;
-                seconds = left % 60;
+                    days = hours / 24 | 0;
+
+                hours = hours % 24;
                 minutes %= 60;
+
                 if (document.getElementById('nextTime' + id)) {
-                    wordDay = getStringTime(days, 'd');
-                    wordHours = getStringTime(hours, 'h');
-                    wordMinutes = getStringTime(minutes, 'm');
+                    let wordDay = getStringTime(days, 'd');
+                    let wordHours = getStringTime(hours, 'h');
+                    let wordMinutes = getStringTime(minutes, 'm');
                     document.getElementById('nextTime' + id).innerText = `${days ? days + wordDay + ' ' : ''}${hours ? hours + wordHours + ' ' : ''}${minutes ? minutes + wordMinutes : ''}`;
                     setTimeout(function () {
                         timeRender(left, id)
@@ -305,7 +285,7 @@
     var $subContent = $('.main-content[data-tab-name="subs"]');
     chrome.storage.local.get(null, function (result) {
         let i = 0;
-        b = result;
+        let b = result;
         if (!$.isEmptyObject(b.anilibria) || !$.isEmptyObject(b.anistar) || !$.isEmptyObject(b.animevost) || !$.isEmptyObject(b.anidub) || !$.isEmptyObject(b.animy)) {
             empty = true;
             var animeList = b;
@@ -359,7 +339,11 @@
             }
         }
         $('[data-tab-name="subs"] .item-control__close').click(function () {
-            chrome.runtime.sendMessage({output: $(this).closest('.item').find('a').attr('href'), remove: 1});
+            chrome.runtime.sendMessage({
+                output: $(this).closest('.item').find('a').attr('href'),
+                remove: 1,
+                site: $(this).closest('.item').data('site')
+            });
             $(this).closest('.item').remove();
             delete b[$(this).closest('.item').data('site')][$(this).closest('.item').find('a').attr('href')];
             arraySubj = arraySubj.filter(item => item.timer_id != $(this).closest('.item').data('id'));
@@ -368,9 +352,13 @@
         new SimpleBar($subContent.get(0), {autoHide: false});
     });
 
-    $('[data-tab-name="notification"] .item').click(async function () {
-        urlRed = $(this).find('a').attr('href');
-        window.open(urlRed);
+    $('[data-tab-name="notification"] .item').click(async function (event) {
+        let target = $(event.target);
+        if (!target.is("a") && !target.parent().is("a")) {
+            let urlRed = $(this).find('a').attr('href');
+            window.open(urlRed);
+        }
+
         delete notificationList[$(this).data('id')];
         $(this).remove();
         await saveObjectInLocalStorage({'notificationList': notificationList});
