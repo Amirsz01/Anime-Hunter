@@ -1,11 +1,31 @@
-import {getObjectFromLocalStorage, saveObjectInLocalStorage} from "./utils/utils.js";
-
 (async () => {
     const templates = {};
     const tabs = {};
     let arraySubj = [];
 
+    const getObjectFromLocalStorage = async function (key) {
+        return new Promise((resolve, reject) => {
+            try {
+                chrome.storage.local.get(key, function (value) {
+                    resolve(value[key]);
+                });
+            } catch (ex) {
+                reject(ex);
+            }
+        });
+    };
 
+    const saveObjectInLocalStorage = async function (obj) {
+        return new Promise((resolve, reject) => {
+            try {
+                chrome.storage.local.set(obj, function () {
+                    resolve();
+                });
+            } catch (ex) {
+                reject(ex);
+            }
+        });
+    };
     const getSortType = function () {
         let res = localStorage.getItem('sortType');
         if (res == null) {

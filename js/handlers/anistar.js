@@ -1,8 +1,8 @@
-import * as cheerio from './../cheerio.js'
+const {load} = require('cheerio')
 
-const $ = cheerio.load;
+const $ = load
 
-export function anistarHandler(page) {
+function anistarHandler(page) {
     let $page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
     let $lastEpisode = $page('.torrent .info_d1:first');
     let lastEpisodeNum = $lastEpisode.text().match(/[0-9]+/i) ? parseInt($lastEpisode.text().match(/[0-9]+/i)[0]) : -1;
@@ -22,3 +22,5 @@ export function anistarHandler(page) {
         time
     }
 }
+
+module.exports = {anistarHandler}

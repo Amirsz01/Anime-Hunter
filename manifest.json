@@ -1,7 +1,6 @@
 {
     "background": {
-        "service_worker": "bg-wrapper.js",
-        "type": "module"
+        "service_worker": "bg-wrapper.js"
     },
     "action": {
         "browser_style": true,

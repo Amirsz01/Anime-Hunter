@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build": "browserify .\\js\\background.js | uglifyjs > .\\js\\bundle.js\nbrowserify .\\js\\popup.js | uglifyjs > .\\js\\bundle_popup.js",
+        "build": "browserify .\\js\\background.js | uglifyjs > .\\js\\bundle.js",
         "build-dev": "browserify .\\js\\background.js -o .\\js\\bundle.js",
         "buildp-dev": "browserify .\\js\\popup.js -o .\\js\\bundle_popup.js"
     },

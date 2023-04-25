@@ -1,3 +1,4 @@
 /.idea/
 /node_modules/
-/js/background.js
+/js/bundle.js
+

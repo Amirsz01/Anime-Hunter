@@ -23,5 +23,5 @@ async function saveObjectInLocalStorage(obj) {
 }
 
 
-export {getObjectFromLocalStorage, saveObjectInLocalStorage};
+module.exports = {getObjectFromLocalStorage, saveObjectInLocalStorage};
 

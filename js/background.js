@@ -1,7 +1,7 @@
-import {getObjectFromLocalStorage, saveObjectInLocalStorage} from "./utils/utils.js";
-import {anistarHandler} from "./handlers/anistar.js";
-import {animevostHandler} from "./handlers/animevost.js";
-import {animyHandler} from "./handlers/animy.js";
+const {getObjectFromLocalStorage, saveObjectInLocalStorage} = require("./utils/utils.js");
+const {anistarHandler} = require("./handlers/anistar.js");
+const {animevostHandler} = require("./handlers/animevost.js");
+const {animyHandler} = require("./handlers/animy.js");
 
 const duration = 10000;
 
@@ -318,7 +318,7 @@ chrome.notifications.onClosed.addListener(async function (notificationId, byUser
     }
 });
 
-export async function init() {
+async function init() {
     recreateStorage(); // Пересоздаем базу
 
     await setTimeout(function () {
@@ -446,3 +446,5 @@ function newSystem(time) {
     console.log("z =" + z);
     newSystem(z)
 }
+
+init()

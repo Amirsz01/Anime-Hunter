@@ -1,8 +1,8 @@
-import * as cheerio from './../cheerio.js'
+const {load} = require('cheerio')
 
-const $ = cheerio.load;
+const $ = load
 
-export function animevostHandler(page) {
+function animevostHandler(page) {
     let $page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
     let $lastEpisode = page.match(/var data =.*/)[0];
     let lastEpisode = 'pusto';
@@ -24,3 +24,5 @@ export function animevostHandler(page) {
         time
     }
 }
+
+module.exports = {animevostHandler}
