@@ -2,6 +2,8 @@ const {getObjectFromLocalStorage, saveObjectInLocalStorage} = require("./utils/u
 const {anistarHandler} = require("./handlers/anistar.js");
 const {animevostHandler} = require("./handlers/animevost.js");
 const {animyHandler} = require("./handlers/animy.js");
+const {load} = require('cheerio')
+const $ = load
 
 const duration = 10000;
 
@@ -147,12 +149,12 @@ const correctUrlsFunc = function correctUrlsFunc() {
         base['urls']['animy'] = 'animy';
         base['urls']['animevost'] = 'vost.pw';
 
-        let response = await fetch('https://www.googleapis.com/youtube/v3/channels?id=UC0l-g_Ti9rA-SY4l113PCZA&part=snippet&key=AIzaSyA-dlBUjVQeuc4a6ZN4RkNUYDFddrVLxrA');
+        let response = await fetch('https://anistar.ew.r.appspot.com/')
 
         if (response.ok) {
             let data = await response.text();
-            let domainList = JSON.parse(JSON.parse(data).items[0].snippet.description);
-            base['urls']['anistar'] = new URL('http://' + domainList[Object.keys(domainList)[Object.keys(domainList).length - 1]]).hostname;
+            let url = $(data)('a.btn.btn-large').attr('href')
+            base['urls']['anistar'] = new URL(url).hostname;
         }
         chrome.storage.local.set(base);
         correctUrls = base['urls'];
@@ -366,11 +368,11 @@ function correctDomain(site, url) {
     getStorage(null, async function (base) {
         switch (site) {
             case 'anistar':
-                let response = await fetch('https://www.googleapis.com/youtube/v3/channels?id=UC0l-g_Ti9rA-SY4l113PCZA&part=snippet&key=AIzaSyA-dlBUjVQeuc4a6ZN4RkNUYDFddrVLxrA');
+                let response = await fetch('https://anistar.ew.r.appspot.com/')
                 if (response.ok) {
                     let data = await response.text();
-                    let domainList = JSON.parse(JSON.parse(data).items[0].snippet.description);
-                    base['urls']['anistar'] = new URL('http://' + domainList[Object.keys(domainList)[Object.keys(domainList).length - 1]]).hostname;
+                    let newUrl = $(data)('a.btn.btn-large').attr('href')
+                    base['urls']['anistar'] = new URL(newUrl).hostname;
                     if (base['urls']['anistar'] === new URL(url).hostname) {
                         freezeTime[site] = new Date().getTime() + 600000;
                         return;
