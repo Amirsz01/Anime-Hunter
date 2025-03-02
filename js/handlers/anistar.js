@@ -6,6 +6,8 @@ function anistarHandler(page) {
     let $page = $(page.replace(/^[\s\S]*<body.*?>|<\/body>[\s\S]*$/ig, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/ig, '').replace(/(href|src)=("|')[^=("|')]*(?:(?!("|'))<[^"]*)*("|')/ig, ''));
     let $lastEpisode = $page('.torrent .info_d1:first');
     let lastEpisodeNum = $lastEpisode.text().match(/[0-9]+/i) ? parseInt($lastEpisode.text().match(/[0-9]+/i)[0]) : -1;
+    let searchInDesc = $page('.descripts .reason').text().match(/.*авлен.*(\d).*сер.*/)[1] ?? -1
+    lastEpisodeNum = lastEpisodeNum === -1 ? parseInt(searchInDesc) : -1
     let $tags = $page('.tags').text();
     // $tags = iconv.encode(iconv.decode(new Buffer($tags, 'binary'), 'win1251'), 'utf8').toString();
     //  base[site][key]['time'] != null
